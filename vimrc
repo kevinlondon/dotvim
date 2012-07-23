@@ -1,5 +1,5 @@
 filetype off
-call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
 call pathogen#helptags()
 syntax on
 filetype plugin indent on
@@ -64,3 +64,18 @@ vnoremap <F1> <ESC>
 nnoremap ; :
 
 inoremap jj <ESC>
+
+" Disable pylint checking every save
+let g:pymode_lint_write = 0
+
+" Set key 'R' for run python code
+let g:pymode_run_key = 'R'
+
+" Load show documentation plugin
+let g:pymode_doc = 1
+
+" Key for show python documentation
+let g:pymode_doc_key = 'K'
+
+" Disable python folding
+let g:pymode_folding = 0
