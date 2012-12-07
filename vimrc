@@ -79,3 +79,18 @@ let g:pymode_doc_key = 'K'
 
 " Disable python folding
 let g:pymode_folding = 0
+
+let g:pyflakes_use_quickfix = 0
+let g:miniBufExplMapWindowNavVim = 1 
+let g:miniBufExplMapWindowNavArrows = 1 
+let g:miniBufExplMapCTabSwitchBufs = 1 
+let g:miniBufExplModSelTarget = 1
+
+let g:pep8_map='<leader>8'
+
+" #Autocomplete
+au FileType python set omnifunc=pythoncomplete#Complete
+let g:SuperTabDefaultCompletionType = "context"
+
+" Enable menu and pydoc preview
+set completeopt=menuone,longest,preview
