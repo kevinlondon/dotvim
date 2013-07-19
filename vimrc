@@ -1,3 +1,4 @@
+filetype on
 filetype off
 call pathogen#infect()
 call pathogen#helptags()
@@ -81,10 +82,6 @@ let g:pymode_doc_key = 'K'
 let g:pymode_folding = 0
 
 let g:pyflakes_use_quickfix = 0
-let g:miniBufExplMapWindowNavVim = 1 
-let g:miniBufExplMapWindowNavArrows = 1 
-let g:miniBufExplMapCTabSwitchBufs = 1 
-let g:miniBufExplModSelTarget = 1
 
 let g:pep8_map='<leader>8'
 
@@ -94,3 +91,8 @@ let g:SuperTabDefaultCompletionType = "context"
 
 " Enable menu and pydoc preview
 set completeopt=menuone,longest,preview
+
+let g:miniBufExplMapWindowNavVim = 1 
+let g:miniBufExplMapWindowNavArrows = 1 
+let g:miniBufExplMapCTabSwitchBufs = 1 
+let g:miniBufExplModSelTarget = 1 

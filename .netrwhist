@@ -1,6 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/Users/kevinlondon/.vim'
-let g:netrw_dirhist_2='/Users/kevinlondon/dropbox/programming/python/Target Range Refactor'
-let g:netrw_dirhist_3='/Users/kevinlondon/dropbox/programming/python/python_for_post/source/examples'
-let g:netrw_dirhist_4='/Users/kevinlondon/dropbox/programming/other/aces-dev/transforms/ctl/odt/p3dci'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Users/kevinlondon/dropbox/programming/python/django/deploy-django/demosite/transformations'
+let g:netrw_dirhist_2='/Users/kevinlondon/dropbox/programming/python/django/deploy-django/demosite/fields'
+let g:netrw_dirhist_3='/Users/kevinlondon/dropbox/programming/python/django/sentinel/sentinel/migrations'
