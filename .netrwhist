@@ -1,4 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/usr/home/kevin/projects/wd-email-dispatch/requirements'
-let g:netrw_dirhist_2='/usr/home/kevin/projects/wd-email-notifications/wdmail/templates'
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/usr/home/kevin/projects/wd-auth/wdauth/apps'
+let g:netrw_dirhist_2='/usr/home/kevin/projects/wd-auth/wdauth/apps/accounts'
+let g:netrw_dirhist_3='/usr/home/kevin/projects/wd-auth/wdauth/apps/accounts/tests'
+let g:netrw_dirhist_4='/usr/home/kevin/projects/wd-auth/wdauth/apps/accounts/tests/auth'
+let g:netrw_dirhist_5='/usr/home/kevin/projects/wd-database'
+let g:netrw_dirhist_6='/usr/home/kevin/projects/wd-database/wddata'
+let g:netrw_dirhist_7='/usr/home/kevin/projects/wd-database/wddata/assets'
+let g:netrw_dirhist_8='/usr/home/kevin/projects/wd-database/wddata'

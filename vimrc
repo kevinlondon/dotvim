@@ -80,7 +80,7 @@ vnoremap <tab> %
 set wrap
 set textwidth=79
 set formatoptions=qrn1
-set colorcolumn=80
+set colorcolumn=80,100
 
 nnoremap <up> <nop>
 nnoremap <down> <nop>
@@ -132,8 +132,16 @@ let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBufs = 1 
 let g:miniBufExplModSelTarget = 1 
 
+" Auto-trim whitespace.
 autocmd BufWritePre *.py :%s/\s\+$//e
+
+" Show linenumbers.
 set number
+
 " Enable 256 Colors in iTerm
 let &t_Co=256
+
+" Tweaks for CtrlP Plugin
+let g:ctrlp_custom_ignore = 'DS_Store\|build\|dist\|git\|.*\.pyc\|.+pyc'
+
 
