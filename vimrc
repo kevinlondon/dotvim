@@ -15,7 +15,6 @@ Plugin 'gmarik/Vundle.vim'
 " The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'lsdr/monokai'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -138,10 +137,9 @@ autocmd BufWritePre *.py :%s/\s\+$//e
 " Show linenumbers.
 set number
 
-" Enable 256 Colors in iTerm
-let &t_Co=256
 
 " Tweaks for CtrlP Plugin
 let g:ctrlp_custom_ignore = 'DS_Store\|build\|dist\|git\|.*\.pyc\|.+pyc'
 
+map <C-n> :NERDTreeToggle<CR>
 
