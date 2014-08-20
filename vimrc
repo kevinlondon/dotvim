@@ -114,9 +114,6 @@ let g:pymode_doc_key = 'K'
 
 " Disable python folding
 let g:pymode_folding = 0
-
-let g:pyflakes_use_quickfix = 0
-
 let g:pep8_map='<leader>8'
 
 " #Autocomplete
@@ -142,4 +139,7 @@ set number
 let g:ctrlp_custom_ignore = 'DS_Store\|build\|dist\|git\|.*\.pyc\|.+pyc'
 
 map <C-n> :NERDTreeToggle<CR>
+
+" Syntax highlighting speedup
+let g:syntastic_enable_highlighting = 0
 
