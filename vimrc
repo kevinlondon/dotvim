@@ -143,3 +143,11 @@ map <C-n> :NERDTreeToggle<CR>
 " Syntax highlighting speedup
 let g:syntastic_enable_highlighting = 0
 
+autocmd BufWritePost *.py call Flake8()
+
+" Remap window nav keys
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
