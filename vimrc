@@ -159,3 +159,7 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:vim_markdown_folding_disabled=1
+
+" Automatically reformat markdown files to 80 characters
+au BufRead,BufNewFile *.md setlocal textwidth=80
