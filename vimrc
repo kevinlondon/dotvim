@@ -103,6 +103,19 @@ inoremap jj <ESC>
 " Disable pylint checking every save
 let g:pymode_lint_write = 0
 
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+" Set linting into passive mode
+" let g:syntastic_mode_map = {"mode": "passive", "active_filetypes": ["python", "js"]}
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_python_checkers=['flake8', 'pep8']
+let g:syntastic_python_flake8_args='--max-line-length=100'
+
 " Set key 'R' for run python code
 let g:pymode_run_key = 'R'
 
@@ -123,17 +136,11 @@ let g:SuperTabDefaultCompletionType = "context"
 " Enable menu and pydoc preview
 set completeopt=menuone,longest,preview
 
-let g:miniBufExplMapWindowNavVim = 1 
-let g:miniBufExplMapWindowNavArrows = 1 
-let g:miniBufExplMapCTabSwitchBufs = 1 
-let g:miniBufExplModSelTarget = 1 
-
 " Auto-trim whitespace.
 autocmd BufWritePre *.py :%s/\s\+$//e
 
 " Show linenumbers.
 set number
-
 
 " Tweaks for CtrlP Plugin
 let g:ctrlp_custom_ignore = 'DS_Store\|build\|dist\|git\|.*\.pyc\|.+pyc'
@@ -143,3 +150,8 @@ map <C-n> :NERDTreeToggle<CR>
 " Syntax highlighting speedup
 let g:syntastic_enable_highlighting = 0
 
+" Remap window nav keys
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
