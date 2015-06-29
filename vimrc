@@ -18,6 +18,7 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Bundle 'alfredodeza/pytest.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -62,7 +63,8 @@ set ttyfast
 set ruler
 set backspace=indent,eol,start
 set laststatus=2
-set undofile
+set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+set autoread
 
 let mapleader=','
 
@@ -105,17 +107,16 @@ inoremap jj <ESC>
 " Disable pylint checking every save
 let g:pymode_lint_write = 0
 
+set statusline+=%F
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-" Set linting into passive mode
-" let g:syntastic_mode_map = {"mode": "passive", "active_filetypes": ["python", "js"]}
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_python_checkers=['flake8', 'pep8']
+let g:syntastic_python_checkers=['flake8']
 let g:syntastic_python_flake8_args='--max-line-length=100'
 
 " Set key 'R' for run python code
@@ -139,7 +140,7 @@ let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
 
 " Auto-trim whitespace.
-autocmd BufWritePre *.py :%s/\s\+$//e
+autocmd BufWritePre * :%s/\s\+$//e
 
 " Show linenumbers.
 set number
@@ -163,3 +164,8 @@ let g:vim_markdown_folding_disabled=1
 
 " Automatically reformat markdown files to 80 characters
 au BufRead,BufNewFile *.md setlocal textwidth=80
+
+" Pytest
+nmap <silent><Leader>f <Esc>:Pytest file<CR>
+nmap <silent><Leader>c <Esc>:Pytest class<CR>
+nmap <silent><Leader>m <Esc>:Pytest method<CR>
