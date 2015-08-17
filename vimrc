@@ -157,7 +157,7 @@ set completeopt=menuone,longest,preview
 set number
 
 " Tweaks for CtrlP Plugin
-let g:ctrlp_custom_ignore = 'DS_Store\|build\|dist\|git\|.*\.pyc\|.+pyc|\node_modules|\bower_components'
+let g:ctrlp_custom_ignore = 'DS_Store\|build\|dist\|git\|.*\.pyc\|.+pyc\|node_modules\|bower_components\|tmp'
 
 map <C-n> :NERDTreeToggle<CR>
 
