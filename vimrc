@@ -112,12 +112,15 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_mode = "passive"
+let g:syntastic_auto_loc_list = 2
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_python_checkers=['flake8']
 let g:syntastic_python_flake8_args='--max-line-length=100'
+" Syntax highlighting speedup
+let g:syntastic_enable_highlighting = 0
 
 " Set key 'R' for run python code
 let g:pymode_run_key = 'R'
@@ -136,22 +139,28 @@ let g:pep8_map='<leader>8'
 au FileType python set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
 
+" Auto-trim whitespace.
+fun! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
+
+autocmd FileType c,cpp,java,php,ruby,python,javascript autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+
 " Enable menu and pydoc preview
 set completeopt=menuone,longest,preview
 
-" Auto-trim whitespace.
-autocmd BufWritePre * :%s/\s\+$//e
 
 " Show linenumbers.
 set number
 
 " Tweaks for CtrlP Plugin
-let g:ctrlp_custom_ignore = 'DS_Store\|build\|dist\|git\|.*\.pyc\|.+pyc'
+let g:ctrlp_custom_ignore = 'DS_Store\|build\|dist\|git\|.*\.pyc\|.+pyc|\node_modules|\bower_components'
 
 map <C-n> :NERDTreeToggle<CR>
 
-" Syntax highlighting speedup
-let g:syntastic_enable_highlighting = 0
 
 " Remap window nav keys
 nnoremap <C-J> <C-W><C-J>
@@ -166,6 +175,6 @@ let g:vim_markdown_folding_disabled=1
 au BufRead,BufNewFile *.md setlocal textwidth=80
 
 " Pytest
-nmap <silent><Leader>f <Esc>:Pytest file<CR>
-nmap <silent><Leader>c <Esc>:Pytest class<CR>
-nmap <silent><Leader>m <Esc>:Pytest method<CR>
+nmap <silent><Leader>f <Esc>:w\|:Pytest file verbose<CR>
+nmap <silent><Leader>c <Esc>:w\|:Pytest class verbose<CR>
+nmap <silent><Leader>m <Esc>:w\|:Pytest method verbose<CR>
